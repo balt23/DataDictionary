@@ -1,0 +1,2939 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GIS Data Dictionary Index</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+<body>
+  <div id= "bannerA">
+    <a href="./CityCountyDistrict.html" target=_blank>City County District Search</a>
+    <a href="https://www.txdot.gov/inside-txdot/division/transportation-planning/roadway-inventory.html" target=_blank>Roadway Inventory&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+    <a href="http://gis-txdot.opendata.arcgis.com" target=_blank>Data Portal&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+    <a href="https://www.txdot.gov/inside-txdot/division/transportation-planning.html" target=_blank>TPP&nbsp;&nbsp;|&nbsp;&nbsp;</a>
+  </div>
+
+  <div id="bannerB">
+    <a href="https://www.txdot.gov/" target=_blank>&nbsp;&nbsp;<img border="0" src="images/logo.png" > </a>
+  </div>
+
+  <h1 style= "text-align: center">GIS Data Dictionary</h1>
+
+  <p style= "text-align: center">
+    The GIS Data Dictionary is a resource for understanding terms, field names, and abbreviations commonly used in TxDOT GIS Data.
+  </p>
+
+<p><input type="text" id="mainInput" onfocus= "this.value=''" onkeyup="ContactsearchFX()" placeholder="Search the Data Dictionary by Name or Alias..."></p>
+
+<script>
+
+window.onload = function() {
+  var rows = document.querySelectorAll('tr:not(.header)');
+
+  for (var i = 0; i < rows.length; i++) {
+    rows[i].style.display = 'none';
+  }
+}
+
+
+function ContactsearchFX() {
+  var input, filter, table, tr, td, i, name, alias;
+  input = document.getElementById("mainInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    name = tr[i].getElementsByTagName("td")[0];
+    alias = tr[i].getElementsByTagName("td")[1];
+    if (name||alias) {
+      if (name.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      }
+      else if (alias.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      }
+      else {
+        tr[i].style.display = "none";
+
+      }
+    }
+  }
+  var rows = document.querySelectorAll('tr:not(.header)');
+
+  if (input.value.length == 0) {
+   for (var i = 0; i < rows.length; i++) {
+     rows[i].style.display = 'none';
+   }
+  }
+
+}
+</script>
+
+<table id="myTable">
+  <col width= "15%">
+  <col width= "15%">
+  <col width= "20%">
+  <col width= "50%">
+
+  <tr class= "header">
+    <TH>Name</FONT></TH>
+    <TH>Alias</FONT></TH>
+    <TH>Example</FONT></TH>
+    <TH>Description</FONT></TH>
+    </TR>
+    </THEAD>
+
+    <TBODY>
+      <TR>
+      <TD>AADT COMBINATION</TD>
+      <TD><br></TD>
+      <TD><BR></TD>
+      <TD>Number of Combination Trucks in AADT</TD>
+      </TR>
+
+      <TR>
+      <TD>ADJUSTED CURRENT ADT</TD>
+      <TD>ADT_ADJ</TD>
+      <TD>000000 - 999999</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ADMINISTRATIVE SYSTEM</TD>
+      <TD>ADMIN</TD>
+      <TD>1=State Highway Agency<BR>
+          2=County4=City (Municipality)<BR>
+          5=Private Toll<BR>
+          6=Local Toll Authority<BR>
+          7=Other Federal Agency<BR>
+          8=Bureau of Indian Affairs<BR>
+          9=Bureau of Fish and Wildlife<BR>
+          10=U.S. Forest Service<BR>
+          11=National Park Service<BR>
+          12=Bureau of Reclamation<BR>
+          13=Corp of Engineers<BR>
+          14=Navy/Marines<BR>
+          15=Army</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ADMINISTRATIVE SYSTEM OLD</TD>
+      <TD>ADMIN_OLD</TD>
+      <TD>01=State (Rural)<BR>
+          02=State (City; 5,000+)<BR>
+          03=Certified County maintained<BR>
+          04=Not county maintained <BR>
+          05=State (City; < 5,000)<BR>
+          06=City(< 5,000)<BR>
+          07=Other State Agency (Rural)<BR>
+          08=Federal (Rural)<BR>
+          09=Other State (City >= 5,000)<BR>
+          10=Other State (City < 5,000)<br>
+          11=Federal (City; < 5,000)<BR>
+          12=Federal (City; 5,000+)<BR>
+          13=City (5,000+)</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ADOPT A HIGHWAY ROUTE</TD>
+      <TD>SEC_RTE_ADOPT_A_HIGHWAY<BR>SEC_ADP</TD>
+      <TD>0=Is not an Adopt a Highway<BR>M=Is an Adopt a Highway</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ADT HISTORY YEAR</TD>
+      <TD>ADT_HIST_YR</TD>
+      <TD>yyyy</TD>
+      <TD>Current year minus 1</TD>
+      </TR>
+
+      <TR>
+      <TD>ADT HISTORY YEAR 1 to 9</TD>
+      <TD>HY_1<br>HY_2<br>HY_3<br>HY_4<br>HY_5<br>HY_6<br>HY_7<br>HY_8<br>HY_9<br></TD>
+      <TD>000000 - 999999</TD>
+      <TD><BR></TD>
+      </TR>
+
+
+
+      <TR>
+      <TD>ASSET ID</TD>
+      <TD>ASSET_ID</TD>
+      <TD>6543</TD>
+      <TD>System generated number that uniquely identifies an ASSET.</TD>
+      </TR>
+
+      <TR>
+      <TD>ASSET NAME</TD>
+      <TD>ASSET_NM*</TD>
+      <TD>Name of Asset</TD>
+      <TD>Identifies the named asset</TD>
+      </TR>
+
+      <TR>
+      <TD>ATHWLD</TD>
+      <TD>ATH_100</TD>
+      <TD>000 - 999</TD>
+      <TD>Over the design period in hundreds of pounds</TD>
+      </TR>
+
+      <TR>
+      <TD>AVERAGE DAILY TRAFFIC</TD>
+      <TD>AADT_SINGLE_UNIT</TD>
+      <TD><BR></TD>
+      <TD>Number of Single Unit Trucks in AADT</TD>
+      </TR>
+
+      <TR>
+      <TD>AVERAGE DAILY TRAFFIC COMBO TRUCK</TD>
+      <TD>PCT_CADT</TD>
+      <TD>00.0 to 99.9</TD>
+      <TD>Percent of Combo-Unit-Trucks in AADT</TD>
+      </TR>
+
+      <TR>
+      <TD>AVERAGE DAILY TRAFFIC SINGLE TRUCK</TD>
+      <TD>PCT_SADT</TD>
+      <TD>0.00 to 99.9</TD>
+      <TD>Percent of Single-Unit-Trucks in AADT</TD>
+      </TR>
+
+      <TR>
+      <TD>AVERAGE WHEEL LOAD</TD>
+      <TD>ATH_PCT</TD>
+      <TD>000 - 100</TD>
+      <TD>This is a percentage</TD>
+      </TR>
+
+      <TR>
+      <TD>AXLE LOAD LIMIT</TD>
+      <TD>LOAD_AXLE</TD>
+      <TD>000000 - 999999</TD>
+      <TD>In pounds</TD>
+      </TR>
+
+      <TR>
+      <TD>BASE TYPE</TD>
+      <TD>BASE_TP</TD>
+      <TD>1=Roadbed Soil<BR>2=Flex Base (Granular)<BR>3=Stabilized Earth or Flex (Granular)<BR>8=Asphalt Base (Hot Mix, Asphalt Concrete)<BR>9=Concrete</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>BEGIN/END DISTANCE FROM ORIGIN</TD>
+      <TD>BEGIN_DFO<BR>END_DFO<br>FRM_DFO<BR>TO_DFO</TD>
+      <TD>654.321</TD>
+      <TD>The distance from the route starting point in miles that the asset begins or ends.</TD>
+      </TR>
+
+      <TR>
+      <TD>BEGIN/END MILEPOINT</TD>
+      <TD>BMP<BR>EMP</TD>
+      <TD>252</TD>
+      <TD>Within the Control-Section</TD>
+      </TR>
+
+      <TR>
+      <TD>BEGIN/END TERMINI</TD>
+      <TD>B_TERM<BR>E_TERM</TD>
+      <TD><BR></TD>
+      <TD>(Record-Type 6 only)</TD>
+      </TR>
+
+      <TR>
+      <TD>BICYCLE ROUTE</TD>
+      <TD>SEC_BIC</TD>
+      <TD>0=Is not a Bicycle Route<BR>L=Is a Bicycle Route</TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line</TD>
+      </TR>
+
+      <TR>
+      <TD>CARDINAL DIRECTION</TD>
+      <TD>DIR_TRAV</TD>
+      <TD>0=Not Applicable<BR>1=North to South<BR>2=West to East<BR>3=South to North<BR>4=Clockwise Loop</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CENSUS PLACE NUMBER</TD>
+      <TD>CEN_PLACE</TD>
+      <TD>0</TD>
+      <TD>No longer used</TD>
+      </TR>
+
+      <TR>
+      <TD>CITY NUMBER</TD>
+      <TD>Municipality</TD>
+      <TD>00000 - 99999</TD>
+      <TD>See <a href= "./CityCountyDistrict.html" target= "_blank">City County District</a> table for complete list of Texas cities and codes</TD>
+      </TR>
+
+      <TR>
+      <TD>COUNTY NUMBER</TD>
+      <TD>CI</TD>
+      <TD>001 - 254</TD>
+      <TD>See <a href= "./CityCountyDistrict.html" target= "_blank">City County District</a> for complete list of Texas counties and codes</TD>
+      </TR>
+
+      <TR>
+      <TD>CURRENT ADT</TD>
+      <TD>ADT_CUR</TD>
+      <TD>000000 - 999999</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CURRENT YEAR ADT</TD>
+      <TD>ADT_YEAR</TD>
+      <TD>2018</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>DATA DATE</TD>
+      <TD>DATA_DATE</TD>
+      <TD>Y2018</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>DESIGN HOURLY VOLUME</TD>
+      <TD>DHV</TD>
+      <TD>000000 - 999999</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>DESIGN YEAR</TD>
+      <TD>DESGN_YR</TD>
+      <TD>Current Year + 20 years</TD>
+      <TD>Future ADT Year</TD>
+      </TR>
+
+      <TR>
+      <TD>DESIGN YEAR ADT</TD>
+      <TD>ADT_DESGN</TD>
+      <TD>000000 - 999999</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>DIRECTIONAL DISTRIBUTION FACTOR</TD>
+      <TD>D_FAC</TD>
+      <TD>000 - 100</TD>
+      <TD>This is a percentage</TD>
+      </TR>
+
+      <TR>
+      <TD>DISTRICT ID</TD>
+      <TD>DI</TD>
+      <TD>01 - 25</TD>
+      <TD>See <a href= "./CityCountyDistrict.html" target= "_blank">City County District</a> for complete list of Texas counties and codes</TD>
+      </TR>
+
+      <TR>
+      <TD>EVACUATION ROUTE</TD>
+      <TD>SEC_EVAC</TD>
+      <TD>0=Is not an Evacuation Route<BR>P=Is an Evacuation Route</TD>
+      <TD>Hurricane evacuation routes are specifically designated roadways used to provide the safest and most timely Hurricane evacuation of coastal areas and determine the best allocation of resources during a hurricane threat. Two options that may be activated to help speed up the evacuation process are Contraflow and Evacuation lanes. Contraflow reverses some or all inbound lanes into outbound lanes on a designated roadway. An activated Evacuation lane allows the use of the road's shoulder as a transportation lane during an evacuation. <BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed</TD>
+      </TR>
+
+      <TR>
+      <TD>FEDERAL AID ROUTE</TD>
+      <TD>SEC_FED_AID</TD>
+      <TD>0=Is not a Federal Aid Route<BR>O=Is a Federal Aid Route</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>FLEXIBLE SINGLE AXLE LOAD</TD>
+      <TD>FLEX_ESAL</TD>
+      <TD>000000 - 999999</TD>
+      <TD>Over the Design Period in 1,000 of lbs.</TD>
+      </TR>
+
+      <TR>
+      <TD>FROM/TO REFERENCE MARKER DISPLACEMENT</TD>
+      <TD>FRM_DISP<BR>TO_DISP</TD>
+      <TD>00.000 - 99.999</TD>
+      <TD>Signed (+ or -) in miles</TD>
+      </TR>
+
+      <TR>
+      <TD>FUNCTIONAL CLASSIFICATION</TD>
+      <TD>FUN_SYS<BR>F_SYSTEM<BR>RU_F_SYSTEM</TD>
+      <TD>Rural:<BR>01=Interstate<BR>02=Other Freeway and Expressway <BR>03=Other Principal Arterial<BR>04=Minor Arterial<BR>05=Major Collector<BR>06=Minor Arterial<BR>07=Major Collector<BR>08=Minor Collector<BR>09=Local<BR><BR>Urban:<BR>11=Interstate<BR>12=Other Freeway and Expressway<BR>13=Urban Other Principal Arterial<BR>14=Other Principal Arterial<BR>15=Urban Major Collector<BR>16=Minor Arterial<BR>17=Collector<BR>19=Local<BR><BR></TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>GROSS LOAD LIMIT</TD>
+      <TD>LOAD_GROSS</TD>
+      <TD>000000 - 999999</TD>
+      <TD>In pounds</TD>
+      </TR>
+
+      <TR>
+      <TD>HAZARDOUS MATERIALS ROUTE</TD>
+      <TD>SEC_HAZ</TD>
+      <TD>0=Is not a Haz-Mat Route<BR>C=Is a Haz-Mat Route</TD>
+      <TD>Hazardous Route asset is either present or not present. It is present when a route is registered as a National Hazardous Route Material with the Federal Motor Carrier Safety Administration (FMCSA). Routes are registered when trucks are allowed to drive on the route carrying hazardous materials.<BR><BR>Priority: High<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed</TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY DESIGN 1</TD>
+      <TD>HWY_DES1</TD>
+      <TD>0=One-way-pair - Divided<BR>1=One-way - Undivided<BR>2=Two-way - Undivided<BR>3=Boulevard - Divided<BR>4=Other - Divided (partial access control)<BR>5=Freeway/Expressway - Divided (full access controlled)</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY DESIGN 2</TD>
+      <TD>HWY_DES2</TD>
+      <TD>0 or blank=no HOV nor Railway, nor Toll<BR>A=With HOV Lanes (See HOV-TYPE for type)<BR>B=With Railways<BR>C=Toll Road</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY NUMBER</TD>
+      <TD>HNUM</TD>
+      <TD>0001 - 9999 or OSR or NASA</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY SUFFIX</TD>
+      <TD>HSUF</TD>
+      <TD>Blank or A - Z for Park Roads<BR>A - H, J - N, P - Z for Business Routes<BR>Blank or N,S,E, W or C for Interstates<BR>Blank or N,S,E or W for other highways</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY STATUS</TD>
+      <TD>HWY_STAT</TD>
+      <TD>Not Open to Traffic<BR>0=Proposed <BR>1=Brand New Route Under Construction, New extension of existing roadbed, or new frontage road segment<BR>2=Ghost Lanes<BR>3=Existing Roadway Undergoing (Re)construction (e.g., undivided to divided)<BR><BR>Open to traffic<BR>4=Open but with some construction<BR>5=District data input, TPP data needed<BR>6=All data input<BR>7=Emergency closing</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY STATUS DATE</TD>
+      <TD>HWY_STAT_DATE</TD>
+      <TD>2018</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY STATUS NOTE</TD>
+      <TD>HWY_NOTE</TD>
+      <TD><BR></TD>
+      <TD>Text</TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE PREFIX</TD>
+      <TD>HSYS<BR>RTE_PRFX</TD>
+      <TD>On-System:<BR>BF=Business FM<BR>BI=Business IH<BR>BS=Business State<BR>BU=Business US<BR>FM=Farm to Market<BR>FS=FM Spur<BR>IH=Interstate<BR>PA=Principal Arterial<BR>PR=Park Road<BR>RE=Rec Road<BR>RM=Ranch to Market<BR>RP=Rec Road Spur<BR>RR=Ranch Road<BR>RS=RM Spur<BR>RU=RR Spur<BR>SA=State Alternate<BR>SH=State Highway<BR>SL=State Loop<BR>SS=State Spur<BR>UA=US Alternate<BR>UP=US Spur<BR>US=US Highway<BR><BR>Off-System:<BR>CR=County Road<BR>FC=Func. Classified City Street<BR>FD=Federal Road<BR>GS=Grade Separated Connector<BR>LS=Local Street<BR>TL=Off-System Toll Road</TD>
+      <TD>ROUTE PREFIX TYPE CODE is a brief indicator that identifies a ROUTE PREFIX TYPE.</TD>
+      </TR>
+
+      <TR>
+      <TD>HOURLY VOLUME COMBO TRUCK</TD>
+      <TD>PCT_CDHV</TD>
+      <TD>00.0 to 99.9</TD>
+      <TD>Percent of Combo-Unit-Trucks in DHV</TD>
+      </TR>
+
+      <TR>
+      <TD>HOURLY VOLUME SINGLE TRUCK</TD>
+      <TD>PCT_SDHV</TD>
+      <TD>0.00 to 99.9</TD>
+      <TD>Percent of Single-Unit-Trucks in DHV</TD>
+      </TR>
+
+      <TR>
+      <TD>HOV TYPE</TD>
+      <TD>HOV_TYP</TD>
+      <TD>0=Section does not have HOV lanes (default)<BR>1=Section has exclusive HOV lanes (HOV use only; no other uses permitted)<BR>2=Normal through lane(s) used for exclusive HOV in specified time periods<BR>3=Shoulder/parking lane(s) used for exclusive HOV in specified time periods</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SHOULDER TYPE</TD>
+      <TD>S_TYPE_I<BR>S_TYPE_O<BR>INSD_SHLDR<BR>OUTSD_SHLDR<BR>SHLDR_TYPE</TD>
+      <TD>0=None or Inadequate<BR>1=Bituminous<BR>2=Concrete/Surfaced<BR>3=Flex/Stab<BR>4=Combo<BR>5=Earth<BR>6=Brick<BR>99=Unknown</TD>
+      <TD>The shoulder type refers to the type of shoulder to the left (inside) or right (outside) of the route in the direction of inventory.<BR><BR>Priority: critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Shoulder Type<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SHOULDER USE</TD>
+      <TD>S_USE_I,<BR>S_USE_O<BR>SHLDR_USE_TYPE</TD>
+      <TD>00=No designated use<BR>01=Diagonal Parking<BR>02=Parallel Parking<BR>03=Bicycle<BR>04=Bus<BR>05=Emergency only<BR>06=Peak only<BR>07=Other<BR>08=Evacuation Lane</TD>
+      <TD>shoulder use describes the way the inside (left) or outside (right) shoulder is intended to be used and in some cases by which type of vehicle.<BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Shoulder Use, Begin Time, End Time</TD>
+      </TR>
+
+      <TR>
+      <TD>SHOULDER WIDTH</TD>
+      <TD>S_WID_I<BR>S_WID_O<BR>LEFT SHOULDER<BR>HP_SWL<BR>RIGHT SHOUDLER<BR>HP_SWR</TD>
+      <TD>000 - 999</TD>
+      <TD>Width of the inside (left) or outside (right) shoulder in feet<BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Width</TD>
+      </TR>
+
+      <TR>
+      <TD>CURB TYPE</TD>
+      <TD>CURB_L<BR>CURB_R<BR>INSD_CURB<BR>OUTSD_CURB</TD>
+      <TD>0=None<BR>1=Curb-Surface Drainage Only<BR>2=Curb-Sub-surface Only<BR>3=Overlaid (no longer functions)<BR>4=Overlaid (may or not open)<BR>5=Curb and Gutter</TD>
+      <TD>Refers to the type of curb to the left (inside) OR right (outside) of the route in the direction of travel.<BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Curb Type</TD>
+      </TR>
+
+      <TR>
+      <TD>LENGTH OF SECTION</TD>
+      <TD>LEN_SEC</TD>
+      <TD>0000.001 - 9999.999</TD>
+      <TD>in miles (Calculated as To-DFO minus From-DFO)</TD>
+      </TR>
+
+      <TR>
+      <TD>MAINTENANCE SECTION</TD>
+      <TD>MNT_SEC</TD>
+      <TD>00 - 30</TD>
+      <TD>Maintenance Section Offices are the second administrative subdivision under TxDOT Districts and Area Engineer Offices. The maintenance office designation is coded onto every on-system (state owned) road as a linear feature. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, District, Maintenance Section</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADWAY MAINTENACNE STATUS</TD>
+      <TD>RD_MN_STAT</TD>
+      <TD>01=State Maintenance<BR>02=Local Maintenance<BR>03=Proposed, no maintenance</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>MAINTENANCE DISCTRICT</TD>
+      <TD>MAINT_DIS</TD>
+      <TD>01 - 25</TD>
+      <TD>See City County District table for complete list of TxDOT District codes</TD>
+      </TR>
+
+      <TR>
+      <TD>MAINTENANCE FORMAN</TD>
+      <TD>MNT_FMAN</TD>
+      <TD>00 - 30</TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MEDIAN TYPE</TD>
+      <TD>MED_TYPE<BR>MDN</TD>
+      <TD>0=No median <BR>1=Curbed<BR>2=Positive Barrier<BR>3=Unprotected<BR>4=One-way pair<BR>5=Positive Barrier Flexible<BR>6=Positive Barrier Semi-Rigid<BR>7=Positive Barrier Rigid</TD>
+      <TD>Medians are paved or landscaped areas in the middle of roadways that separate traffic traveling in opposite directions.<BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Median Type</TD>
+      </TR>
+
+      <TR>
+      <TD>MEDIAN WIDTH</TD>
+      <TD>HP_MED_W<BR>MED_WID<BR>MDN_WIDTH</TD>
+      <TD>000 - 999</TD>
+      <TD>The Median Width asset is the measured width (in feet) of a raised or grassy median. Medians must present some sort of physical barrier to a driver. This usually takes the form of a raised curb, or grassy space in the mid-section of a given roadbed.<BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Width</TD>
+      </TR>
+
+      <TR>
+      <TD>METROPOLITAN PLANNING AREA</TD>
+      <TD>MPA</TD>
+      <TD>000 - 999</TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>METROPOLITAN STATISTICAL AREA CLASS CODE</TD>
+      <TD>MSA_CLS</TD>
+      <TD>00=For Off-System Only<BR>01 - 03=Roadway is not within an MSA County<BR>11 - 13=Roadway is within an MSA County</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>METROPOLITAN STATISTICAL AREA COUNTY</TD>
+      <TD>MSA_CNTY</TD>
+      <TD>1=Is an MSA County<BR>0=Is not an MSA County</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>MILEPOINT DATE</TD>
+      <TD>RI_MPT_DATE</TD>
+      <TD>201809</TD>
+      <TD>Format yyyymm (Record-Type 4-7 only)</TD>
+      </TR>
+
+      <TR>
+      <TD>MILEPOINT LENGTH</TD>
+      <TD>RI_MPT_LEN</TD>
+      <TD><BR></TD>
+      <TD>Within the Off-System Control-Section (Record-Type 4-7 only)</TD>
+      </TR>
+
+      <TR>
+      <TD>MINIMUM RIGHT OF WAY WIDTH</TD>
+      <TD>ROW_MIN<BR>MIN_ROW_WIDTH</TD>
+      <TD>0001 - 9999</TD>
+      <TD>Similar to urban streets, the width of right-of-way for suburban roadways is influenced by traffic volume requirements, lane use, cost, extent of ultimate expansion, and land availability. Width is the summation of the various cross-sectional elements, including widths of travel and turning lanes, shoulders, median, sidewalks, and borders.<BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Width</TD>
+      </TR>
+
+      <TR>
+      <TD>MINIMUM SPEED LIMIT</TD>
+      <TD>SPD_MIN</TD>
+      <TD>00 - 80</TD>
+      <TD>In MPH</TD>
+      </TR>
+
+      <TR>
+      <TD>NATIONAL FOREST HIGHWAY</TD>
+      <TD>SEC_NFH</TD>
+      <TD>0=Is not a National Forest Highway<BR>H=Is a National Forest Highway</TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line</TD>
+      </TR>
+
+      <TR>
+      <TD>NATIONAL HIGHWAY SYSTEM ROUTE</TD>
+      <TD>SEC_NHS</TD>
+      <TD>0=Not on the NHS<BR>1=On the NHS, not an Intermodal connector<BR><BR>2-9=On the NHS, is an intermodal connector:<BR>2=Major Airport<BR>3=Major Port Facility<BR>4=Major Amtrak Station<BR>5=Major Rail / Truck Terminal<BR>6=Major Inter-city Bus Terminal<BR>7=Major Public Transit / Mult<BR>8=Major Pipeline Terminal<BR>9=Major Ferry Terminal</TD>
+      <TD>The National Highway System (NHS) consists of roadways important to the nation's economy, defense, and mobility (Interstates, Other Principal Arterials, Strategic Highway Network, Major Strategic Highway Network Connectors, and Intermodal Connectors).</TD>
+      </TR>
+
+      <TR>
+      <TD>NUMBER OF SPECIAL LANES</TD>
+      <TD>SPEC_LANES_NUM_LANES</TD>
+      <TD>0 - 9</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>NUMBER OF THROUGH LANES</TD>
+      <TD>NUM_LANES, NBR_THRU_LANE</TD>
+      <TD>4</TD>
+      <TD>A through lane carries traffic past a facility (intersecting road or non-residential driveway), regardless of length, as opposed to turning lanes or acceleration-deceleration lanes, which separate entering, exiting, or turning traffic from through traffic. Ramps located within grade-separated interchanges are also considered through lanes. Through Lanes are reported to the Federal Highway Administration (FHWA) annually in the Highway Performance Monitoring System (HPMS) report. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Number of Lanes</TD>
+      </TR>
+
+      <TR>
+      <TD>OLD SURFACE TYPE</TD>
+      <TD>OLD_SURF_TYPE</TD>
+      <TD>REC = 1,2,3:<BR>20=Unimproved Road<BR>30=Graded and Drained<BR>40=Soil, Gravel or Stone<BR>51=Bituminous Surface Treated<BR>52=Mixed Bituminous<BR>53=Bituminous Penetration<BR>61=High Flexible<BR>62=Flexible Over Rigid<BR>71=High Rigid - Plain Jointed Concrete<BR>72=High Rigid - Reinforced Jointed<BR>73=High Rigid - Continuous Reinforced<BR>74=Rigid Over Rigid - Bounded<BR>75=Rigid Over Rigid - Unbounded<BR>76=Rigid Over Flexible<BR>80=Other (Brick, Block, etc.)<BR><BR>REC = 0,5,6,7,8,9:<BR>00=Proposed roadway; no surface<BR>05=Earth, Bladed<BR>10=Earth Grade and Drained<BR>22=Stabilized Soil, Unpaved<BR>32=Flexible, Unpaved<BR>51=Bituminous Surface<BR>52=Mixed Bituminous Surface <BR> 53=Mixed Bituminous Surface<BR>54=Bituminous PenetrationBR>55=Bit. Concrete or Sheet Asphalt<BR>56=Bit. Penetration<BR>61=Jointed Concrete Pavement<BR>62=Continuous Reinforced Concrete<BR>63=Prestressed Concrete Pavement<BR>71=Brick Road</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PEAK FACTOR</TD>
+      <TD>K_FAC</TD>
+      <TD>00.0 to 100</TD>
+      <TD>This is a percentage</TD>
+      </TR>
+
+      <TR>
+      <TD>PERCENT PEAK COMBO TRUCK</TD>
+      <TD>PCT_PK_CUT</TD>
+      <TD>0.000 to 99.999</TD>
+      <TD>Percent of Peak Combo-Unit-Trucks</TD>
+      </TR>
+
+      <TR>
+      <TD>PERCENT PEAK SINGLE TRUCK</TD>
+      <TD>PCT_PK_SUT</TD>
+      <TD>0.000 to 99.999</TD>
+      <TD>Percent of Peak Single-Unit-Trucks</TD>
+      </TR>
+
+      <TR>
+      <TD>PERFORMACE ID</TD>
+      <TD>HPMSID</TD>
+      <TD>000000000000 - 999999999999</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PHYSICAL ROADBED</TD>
+      <TD>PHY_RDBD</TD>
+      <TD>K=Single Roadbed<BR>A=Right Frontage<BR>R=Right Main lane<BR>X=Left Frontage<BR>L=Left Main lane<BR>G=Grade Separated Connector</TD>
+      <TD>Roadbed source of fields like Surface-Type, Speed-Limit, and Shoulders for divided roads.</TD>
+      </TR>
+
+      <TR>
+      <TD>RECORD TYPE</TD>
+      <TD>REC<BR>RTE<BR>RTE_PRFX_TYPE<BR>RTE_PRFX_TYPE_ID<BR>RTE_PRFX_TYPE_CD</TD>
+      <TD>0=Grade Separated Connector<BR><BR>On System: <BR>1=On-System Main lanes<BR>2=On-System Right Frontage Road<BR>3=On-System Left Frontage Road<BR>4=Designated, but not built yet<BR><BR>Off-System: <BR>5=County Road<BR>6=Functionally Classified City Street<BR>7=Local City Street<BR>8=Non-TxDOT</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>REFERENCE MARKER DATE</TD>
+      <TD>MKR_DATE</TD>
+      <TD>20180920</TD>
+      <TD>Format yyyymmdd</TD>
+      </TR>
+
+      <TR>
+      <TD>RIA RESERVATION</TD>
+      <TD>RIA_RESV</TD>
+      <TD>00=None<BR>01=National Forest<BR>02=Desig. Forest Hwy<BR>03=National Park<BR>04=National Indian Res.<BR>05=National Military<BR>06=Other National<BR>07=State Forest<BR>08=State Park<BR>09=Other State</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>RIGID SINGLE AXLE LOAD</TD>
+      <TD>RIGID_ESAL</TD>
+      <TD>000000 - 999999</TD>
+      <TD>Over the design period in 1,000 of lbs.</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED ID</TD>
+      <TD>RDBD_ID</TD>
+      <TD>For Centerline File:<BR>AG=Right Side Frontage Road<BR>CG=Centerline/Single Roadbed<BR>GS=Grade Separated Connector<BR>XG=Left Side Frontage Road<BR><BR>For Roadbed File:<BR>A=Right Frontage Road<BR>B=Right Supplemental Frontage Road<BR>G=Grade Separated Connector<BR>K=Single Roadbed<BR>L=Left Roadbed<BR>M=Left Supplemental Main lane<BR>P=Left Supp. Supplemental Main lane<BR>R=Right Roadbed<BR>S=Right Supplemental Main lane<BR>T=Right Supp. Supplemental Main lane<BR>X=Left Frontage Road<BR>Y=Left Supplemental Frontage Road</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED TYPE</TD>
+      <TD>RDBD_TYPE</TD>
+      <TD>KG</TD>
+      <TD>ROADBED TYPE is a brief indicator that identifies a ROADBED TYPE.</TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE</TD>
+      <TD>SEC_Z<BR>SEC_Q<BR>RTE</TD>
+      <TD>0=Not an Other Secondary Route<BR>Z=Is an Other Secondary Route</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>RIA ROUTE ID</TD>
+      <TD>RIA_RTE_ID<BR>RTE_DEFN_LN<BR>RTE_DEFN_LN_NM</TD>
+      <TD>REC_TYPE 0: 10000 - 99999<BR><BR>REC_TYPE 1,2,3: Concatenated [Highway System + Number + Suffix (if any) + hyphen + Roadbed-ID]<BR><BR>REC_TYPE_5: Concatenated [County + C-Sec]<BR><BR>REC_TYPE 6: 100000 - 999999; other format for Tolls<BR><BR>REC_TYPE 7: 1000000 - 9999999<BR><BR>REC_TYPE 8: Concatenated [Toll "TL" Prefix + Highway System + hyphen + Roadbed-ID]<BR><BR>REC_TYPE 9: 700000 - 704999</TD>
+      <TD>The unique identifier for a given roadway</TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE ID</TD>
+      <TD>RTE_ID<BR>RTE_GRID<BR>RTE_DEFN_LN</TD>
+      <TD><BR></TD>
+      <TD>Native GRID ID for each route</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED GEOMETRY LINE ID</TD>
+      <TD>GID<BR>RDBD_GMTRY_LN<BR>RDBD_GMTRY_LN_ID</TD>
+      <TD><BR></TD>
+      <TD>Native GRID ID for each route/roadbed segment</TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE NAME</TD>
+      <TD>RTE_NM</TD>
+      <TD>RM0620-KG</TD>
+      <TD>Route Prefix + Route Number + Route Suffix</TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE NUMBER</TD>
+      <TD>RTE_NBR</TD>
+      <TD>620</TD>
+      <TD>Designated on-system route number or assigned county road number.</TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE PARKWAY</TD>
+      <TD>SEC_PARK</TD>
+      <TD>0=Is not a Parkway<BR>K=Is a Parkway</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE SUFFIX</TD>
+      <TD>RTE_SFX</TD>
+      <TD>N</TD>
+      <TD>ROUTE SUFFIX TYPE CODE is a brief indicator that identifies a ROUTE SUFFIX TYPE.</TD>
+      </TR>
+
+      <TR>
+      <TD>RURAL URBAN CODE</TD>
+      <TD>RU</TD>
+      <TD>1=Rural (Pop. < 5,000)<BR>2=Small Urban (5,000 - 49,999)<BR>3=Urbanized (50,000 - 199,999)<BR>4=Large Urbanized (200,000+)</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SECTION</TD>
+      <TD>SEC</TD>
+      <TD>01 - 99</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SIGNED HIGHWAY</TD>
+      <TD>HWY</TD>
+      <TD>US0035N</TD>
+      <TD>Highway System + Number + Suffix</TD>
+      </TR>
+
+      <TR>
+      <TD>SPECIAL LANE TYPE</TD>
+      <TD>SPEC_LANES_TYPE</TD>
+      <TD>A=HOV<BR>B=Super 2<BR>C=Continuous 2-way Left Turn<BR>D=Climbing Lane</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SPECIAL SYSTEMS</TD>
+      <TD>SPEC_SYS</TD>
+      <TD>00=Is not a STRAHNET<BR>01=Is a STRAHNET route<BR>02=Is a STRAHNET connector</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>STRATEGIC HIGHWAY NETWORK</TD>
+      <TD>SEC_STR</TD>
+      <TD>0=Is not a Strahnet route<BR>1=Is a Strahnet route</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>STRATEGIC HIGHWAY NETWORK CONNECTOR</TD>
+      <TD>SEC_STR_CON</TD>
+      <TD>0=Is not a Strahnet-Connector<BR>1=Is a Strahnet-Connector</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>STREET NAME</TD>
+      <TD>STE_NAM</TD>
+      <TD><BR></TD>
+      <TD>(Record-Type 6 only)</TD>
+      </TR>
+
+      <TR>
+      <TD>SURFACE TREATMENT CODE</TD>
+      <TD>SURF_TREAT_CODE</TD>
+      <TD>1=Permeable Friction Course (PFC)<BR>2=Micro seal<BR>3=Seal Coat<BR>4=Chip Seal<BR>5=Slurry<BR>6=Other</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SURFACE TREATMENT THICKNESS</TD>
+      <TD>SURF_TREAT_THICK</TD>
+      <TD>0.01 - 0.99</TD>
+      <TD>In inches</TD>
+      </TR>
+
+      <TR>
+      <TD>SURFACE TREATMENT YEAR</TD>
+      <TD>SURF_TREAT_YEAR</TD>
+      <TD>2018</TD>
+      <TD>Format yyyy</TD>
+      </TR>
+
+      <TR>
+      <TD>SURFACE TYPE</TD>
+      <TD>SRF_TYPE</TD>
+      <TD>01=Road is unpaved<BR>02=Low Type Bituminous Surface<BR>03=Intermediate Type mixed<BR>04=High Type Flexible<BR>05=High Type Rigid<BR>06=High Type Composite<BR>99=Unknown</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SURFACE WIDTH</TD>
+      <TD>SUR_W</TD>
+      <TD><BR></TD>
+      <TD>Does not include Shoulder-Widths [in feet]</TD>
+      </TR>
+
+      <TR>
+      <TD>SYSTEM TYPE</TD>
+      <TD>SYSTEM</TD>
+      <TD>ON or OFF</TD>
+      <TD>Indicates if asset is part of an ON or OFF system route</TD>
+      </TR>
+
+      <TR>
+      <TD>TANDEM LOAD LIMIT</TD>
+      <TD>LOAD_TAND</TD>
+      <TD>000000 - 999999</TD>
+      <TD>In pounds</TD>
+      </TR>
+
+      <TR>
+      <TD>FROM/TO REFERENCE MARKER NUMBER</TD>
+      <TD>TO_NUM<BR>FRM_NUM</TD>
+      <TD>Non IH = 0010 - 9999<BR>IH = 0000 - 9999</TD>
+      <TD>To/From-Ref-Marker-Nbr + Suf</TD>
+      </TR>
+
+      <TR>
+      <TD>FROM/TO REFERENCE MARKER SUFFIX</TD>
+      <TD>TO_SUF<BR>FRM_SUF</TD>
+      <TD>Blank<BR>A - Z</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>TRAFFIC SITE ID</TD>
+      <TD>TRF_STA_ID</TD>
+      <TD><BR></TD>
+      <TD>Count Station Prefix (County) + Count Station Number + Count Station Suffix]</TD>
+      </TR>
+
+      <TR>
+      <TD>TEXAS TRAVEL TRAIL</TD>
+      <TD>SEC_TTT</TD>
+      <TD>0=Is not a Texas Travel Trail<BR>J=Is a Texas Travel Trail</TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line</TD>
+      </TR>
+
+      <TR>
+      <TD>TRUCK AADT</TD>
+      <TD>TRK_AADT_PCT</TD>
+      <TD>00.0 to 99.9</TD>
+      <TD>Percent-Avg-Daily-Trucks; Col 52 + 53</TD>
+      </TR>
+
+      <TR>
+      <TD>TRUCK DHV</TD>
+      <TD>TRK_DHV_PCT</TD>
+      <TD>00.0 to 99.9</TD>
+      <TD>Percent-Peak-Trucks; Col 54 + 55</TD>
+      </TR>
+
+      <TR>
+      <TD>URBAN AREA NUMBER</TD>
+      <TD>UAN</TD>
+      <TD>00000 - 99999</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>URBAN ROUTE</TD>
+      <TD>SEC_URB</TD>
+      <TD>0=Is not an Urban Route<BR>N=Is an Urban Route</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>USUAL RIGHT OF WAY WIDTH</TD>
+      <TD>ROW_W_USL<BR>USL_ROW_WIDTH</TD>
+      <TD>001 - 999 (in feet)</TD>
+      <TD>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Width</TD>
+      </TR>
+
+      <TR>
+      <TD>VOLUME GROUP</TD>
+      <TD>HP_VOL_GRP</TD>
+      <TD>1=Under 500 <BR>2=500 - 1,999 <BR>3=2,000 - 4,999 <BR>4=5,000 - 9,999 <BR>5=10,000 - 19,999<BR>6=20,000 - 34,999 <BR>7=35,000 - 54,999 <BR>8=55,000 - 84,999 <BR>9=85,000 - 124,999 <BR>10=125,000 - 174,999 <BR>11=175,000 - 249,999 <BR>12=250,000 and more</TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ACCELERATION/DECELERATION LANE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>An acceleration or deceleration lane is an additional area of pavement adjacent to the through lanes, which permits acceleration or deceleration for merging and diverging with through lane traffic. <BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed</TD>
+      </TR>
+
+      <TR>
+      <TD>ACCESS CONTROL</TD>
+      <TD>ACES_CTRL</TD>
+      <TD>1 = Full Access Control<BR>2 = Partial Access Control<BR>3 = No Access Control</TD>
+      <TD>The degree to which access is restricted on a roadway. Full-access-control roadways restrict access to interchanges, while no-access-control roadways provide at-grade access to private driveways and at-grade crossings of other public roads. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Access Control</TD>
+      </TR>
+
+      <TR>
+      <TD>ADMINISTRATIVE BOUNDARY OVERRIDE</TD>
+      <TD>ADMIN_BDRY_OVRD</TD>
+      <TD><BR></TD>
+      <TD>An Administrative Boundary Override is a linear asset maintained by TPP which designates a road segment to the assigned jurisdiction that overrides normal automated processes. An example is a maintenance section maintains a road beyond their district boundary or a route that goes outside of the state. <BR><BR>Priority: High<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Boundary Type, Boundary Name</TD>
+      </TR>
+
+      <TR>
+      <TD STYLE= "text-transform: uppercase;">Alternate Route</TD>
+      <TD>ALT_RTE</TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Route Name, Official Name</TD>
+      </TR>
+
+      <TR>
+      <TD STYLE= "text-transform: uppercase;">Alternate Speed Limit</TD>
+      <TD>ALT_SPD_LMT</TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>AT GRADE OTHER</TD>
+      <TD>ATGRD_OTHR</TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD STYLE= "text-transform: uppercase;">Base Thickness</TD>
+      <TD>BASE_THCK</TD>
+      <TD><BR></TD>
+      <TD>The thickness of the base pavement in inches. For rigid pavements the base is all layers between subgrade and bottom of concrete surface. For flexible pavements the base is all layers between subgrade and bottom of asphalt concrete layer. If there are several types of base, report the total thickness of all base layers.<BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Thickness</TD>
+      </TR>
+
+      <TR>
+      <TD>BASELINE BEARING</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD STYLE= "text-transform: uppercase;">Boundary Crossing</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>BRIDGE</TD>
+      <TD>BRDG</TD>
+      <TD>010010A90101001</TD>
+      <TD>A structure carrying a road, path, railroad, or canal across a river, ravine, road, railroad, or other obstacles.<BR><BR>Structure Number must be a 15 digit string, consisting of District ID (01-25), County Number (001-254), a Federal Zero (0), Control Section, and a Bridge Number (<a href= "images/BridgeFormat.gif" target= "_blank">Click here for format</a>). <BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Structure Number, Description</TD>
+      </TR>
+
+      <TR>
+      <TD>CATTLE GUARD</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CAUSEWAY</TD>
+      <TD>CSWY</TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CEMETARY</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CLIMATE ZONE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CLIMBING PASSING LANE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>A climbing lane is an extra lane that's used for short distances in certain areas to improve safety, ease congestion and prevent delays. These lanes help facilitate the passing of trucks and slow moving vehicles whose speed drops because of the sustained steep grades.<BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Lane Type</TD>
+      </TR>
+
+      <TR>
+      <TD>CONTROL SECTION</TD>
+      <TD>CTRL_SECT_LN<br>CONTROL<BR>CON<BR>C_SEC</TD>
+      <TD>000101 - 999900</TD>
+      <TD>A control section is a unique identifier for individual segments of a roadway. Historically control sections were only assigned to on-system, or state-maintained, highways, and were created as a highway referencing system for planning and maintenance projects, etc. However, this dataset also includes off-system, or non-state-maintained, roadways. Control Section numbers are assigned for the life of the roadway and generally do not change or move, regardless of improvements to the roadway. Currently, control sections are located geographically along roadways using linear referencing.<BR><BR>Control Sections are comprised of six characters, On-system Control Sections are numeric but Off-System Control Sections are alphanumeric :<BR><BR>The Control is a four digit whole number from 0001 - 9999. The Control refers to a general description of two locations in the state. The 'Control Points' may be a few hundred miles apart. The path by which to get from or to is not defined; there could be more than one path to go from the first location to second location. For Off System Control Section numbers the first 2 characters are letters instead of numbers. The Section is a two digit whole number from 01 - 99. The Section further subdivides a Control.
+      <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Ctrl Number, Change Reason, Multi Record, Begin Mile point, End Mile Point</TD>
+      </TR>
+
+      <TR>
+      <TD>COUNTER PEAK LANE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CROSSOVER</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CULVERT</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Culvert Type, Culvert Direction, Intersection Type, Intersection Alignment, Roadbed Feature Grade, Crossing Feature Grade, Box Dimension, Crossing Angle, Fill Depth</TD>
+      </TR>
+
+      <TR>
+      <TD>CURVE CLASS</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>DATE CLOSED TO TRAFFIC</TD>
+      <TD>DOCT</TD>
+      <TD>MM/DD/YYYY</TD>
+      <TD>Represents the date a roadway section was most recently closed to traffic.<br><br>
+          Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>DATE OPENED TO TRAFFIC</TD>
+      <TD>DOTT</TD>
+      <TD>MM/DD/YYYY</TD>
+      <TD>Date Opened to Traffic is a full coverage, linear asset in GRID that represents the date a roadway section was most recently opened to traffic. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Original Open Date</TD>
+      </TR>
+
+      <TR>
+      <TD>DEMAND BASED TOLL PRICE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Demand Based Toll Price is an asset to show the presence of a toll facility that has a dynamic price of use based on the current congestion level. This asset may or may not be preset with non tolled lanes. Verification is usually done by either checking with the toll agency and/or street level verification (Google Street View if up to date). <BR><BR>Priority: High<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed</TD>
+      </TR>
+
+      <TR>
+      <TD STYLE= "text-transform: uppercase;">Driveway</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>FIRE PLUG</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>FUNCTIONAL SYSTEM NUMBER</TD>
+      <TD>FUNCL_SYS</TD>
+      <TD>1 = Interstate<BR>2 = Principal Arterial<BR>3 = Principal Arterial Other<BR>4 = Minor Arterial<BR>5 = Major Collector<BR>6 = Minor Collector<BR>7 = Local</TD>
+      <TD>Functional classification is a process by which streets and highways are grouped into classes according to the character of service they are intended to provide. The functional classification of roadways defines the role each element of the roadway network plays in serving transportation needs. <BR><BR>Functional classification carries with it expectations about roadway design, including its speed, capacity and relationship to existing and future land use development. <BR><BR>Federal legislation continues to use functional classification in determining eligibility for funding under the Federal-aid program. More information about how and when functional classification are determined can be found in the <a href="https://www.fhwa.dot.gov/planning/processes/statewide/related/highway_functional_classifications/" target=_blank>FHWA Highway Functional Classification Concepts, Criteria and Procedures manual</a>. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Functional System</TD>
+      </TR>
+
+      <TR>
+      <TD>GATE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>GOVERNMENT CONTROL</TD>
+      <TD>GOVT_CTRL<br>GOV_CTR_LVL<BR>OWNERSHIP</TD>
+      <TD>01=State Highway Agency<BR>02=County Highway Agency<BR>03=Town Highway Agency<BR>04=Municipal Agency<BR>05=Other State Agency<BR>06=Other Local Agency<BR>07=Federal Agency<BR>08=Other</TD>
+      <TD>Government Control is a full coverage, linear asset in GRID that represents the level of government control for a specified roadway. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Government Control</TD>
+      </TR>
+
+      <TR>
+      <TD>HIGH OCCUPANCY VEHICLE FACILITY</TD>
+      <TD>HOV_FCLTY<br>HOV_FCLTY_TYPE</TD>
+      <TD><BR></TD>
+      <TD>High Occupancy Vehicle (HOV) facilities serve to increase the total number of people moved through a congested corridor. Federal law defines a high occupancy vehicle or HOV to mean a vehicle with no fewer than two persons. A High Occupancy Vehicle facility is one that gives priority treatment to buses, vanpools, carpools and high-occupancy vehicles, including the HOV lanes, park-and-ride lots, and other support facilities or elements.<BR><BR>Federal-Aid Highway Program Guidance on High Occupancy Vehicle (HOV) Lanes)<BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Facility Type</TD>
+      </TR>
+
+      <TR>
+      <TD>HIGH OCCUPANCY VEHICLE LANE</TD>
+      <TD>HOV_LANE</TD>
+      <TD><BR></TD>
+      <TD>A High Occupancy Lane is an asset indicating the maximum number of lanes in both directions designated for High Occupancy Vehicle (HOV) operations for a roadway section. <BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Number of Lanes</TD>
+      </TR>
+
+      <TR>
+      <TD>HISTORICAL MARKER</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>HPMS SAMPLE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>LANE WIDTH</TD>
+      <TD>LANE_WIDTH</TD>
+      <TD>Width in feet<BR>Default Off-System: 10'<BR>Default On-System: 12'</TD>
+      <TD>A lane is part of a roadway (carriageway) that is designated for use by a single line of vehicles. The width of the lane is usually dependent upon traffic, number of lanes, location (rural, urban, or suburban) and construction considerations. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Width</TD>
+      </TR>
+
+      <TR>
+      <TD>LAST OVERLAY THICKNESS</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>LEFT TURN LANE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>LITTER BARREL</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>MATERIAL STOCKPILE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>MAXIMUM SPEED LIMIT</TD>
+      <TD>MAX_SPD_LMT<BR>SPD_MAX</TD>
+      <TD>5-85*<BR><BR>30 mph for City streets<BR>60 mph for County Roads</TD>
+      <TD>Represents the posted speed limit measure in miles per hour for a specified section of roadway. Speed Limit is a required asset for reporting to FHWA as part of the HPMS submittal. <BR><BR>Changes to Maximum Speed Limit for on-system routes must be approved by the Texas Transportation Commission in the form of a Minute Order compiled by the Traffic Operations Division. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Speed Limit</TD>
+      </TR>
+
+      <TR>
+      <TD>MEMORIAL HIGHWAY</TD>
+      <TD>MEMORIAL_HWY<BR>SEC_STM</TD>
+      <TD>0=Is not a State Memorial Highway<BR>I=Is a State Memorial Highway</TD>
+      <TD>Memorial highways are linear assets that represent highways that have been designated either by the state legislature or locally by a city and pay tribute to a wide array of notable people throughout Texas. Chapter 225 of the Transportation code shows the list of legislated memorial highways and is updated after each legislative session. <BR><BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Highway Name</TD>
+      </TR>
+
+      <TR>
+      <TD>MULTIPLE MODAL FACILITY</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>NHS</TD>
+      <TD>GRIDOP.NHS</TD>
+      <TD>Not on the NHS<BR>NHS - non connector<BR>Major Airport - connector<BR>Major Port Facility - connector<BR>Major Amtrak Station - connector<BR>Major Rail Truck Terminal - connector<BR>Major Inter City Bus Terminal - connector<BR><BR>Major Public Transportation or Mult-Modal Passenger Terminal - connector<BR><BR>Major Pipeline Terminal - connector<BR>Major Ferry Terminal - connector<BR>Unknown</TD>
+      <TD>The National Highway System (NHS) consists of roadways important to the nation's economy, defense, and mobility (Interstates, Other Principal Arterials, Strategic Highway Network, Major Strategic Highway Network Connectors, and Intermodal Connectors). This statewide NHS dataset is maintained by the Transportation Planning and Programming Division per Federal Highway Administration requirements, and to serve as a base layer for TxDOT's cartographic products. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, NHS Type, Approval Date</TD>
+      </TR>
+
+      <TR>
+      <TD>NUMBER OF SIGNALS</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>NUMBER OF STOP SIGNS</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>OTHER INTERSECTION FEATURE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>OTHER ROADSIDE FEATURE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>OVERHEAD SIGN</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PARKWAY</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PAVEMENT THICKNESS FLEXIBLE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PAVEMENT THICKNESS RIGID</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PAVEMENT TREATMENT</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PEAK DIRECTION TOLL</TD>
+      <TD>PEAK_DRCT_TOLL<BR>PEAK_DRCT_TOLL_TYPE</TD>
+      <TD>1 = Has a Peak Direction Toll<BR>0 = Does not have a Peak Direction Toll</TD>
+      <TD>A peak direction toll lane is a toll lane which changes direction throughout the day based on the primary travel direction during peak hours. Often, the peak direction will be into a major city during the morning peak hours and out of the city during the <BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Peak Direction Toll Type</TD>
+      </TR>
+
+      <TR>
+      <TD>PEAK LANE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PEAK PARKING</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PEDESTRIAN PASSAGEWAY</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PERCENT GREEN TIME</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Roadbed, Peak Direction Toll Type</TD>
+      </TR>
+
+      <TR>
+      <TD>PERCENT PASS SIGHT DISTANCE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Roadbed, Peak Direction Toll Type</TD>
+      </TR>
+
+      <TR>
+      <TD>PICNIC AREA</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PIPELINE CROSSING</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>PRESENT SERVICEABILITY RATING</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Source: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>RAILROAD CROSSING</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>REFERENCE MARKER</TD>
+      <TD>RMRKR_PNT</TD>
+      <TD><BR></TD>
+      <TD>A statewide point dataset of Texas Reference Marker locations maintained by the Transportation Planning and Programming Division of TxDOT. Reference Markers are located along all on-system (i.e. state maintained) Texas roadways at 2-mile intervals, with the exception of interstate highways, which have markers at 1-mile intervals. Reference markers are used as a linear referencing system for project planning, asset management, and as a location reference in the field. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Point<BR>Attributes: Ref Number, Suffix Code, Change Reason</TD>
+      </TR>
+
+      <TR>
+      <TD>RESERVATION</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>REST AREA</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>RIGHT TURN LANE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED BASE</TD>
+      <TD>RDBD_BASE</TD>
+      <TD>No Base Layer<BR>Asphalt Stabilized with Granular Subbase<BR><BR>Cement Stabilized with Granular Subbase<BR><BR>Hot Mix AC (Bituminous)<BR>Lean Concrete<BR>Stabilized Open-Graded Permeable<BR>Fractured PCC<BR>Cement Stabilized Base<BR>Lime Stabilized Base<BR>Asphalt Stabilized Base<BR>Lime-Fly Ash Stabilized Base<BR>Fly Ash Stabilized Base<BR>Granular Flexible Base<BR>Recycled Asphalt Pavement (RAP) Stabilized Base<BR><BR>Recycled Concrete Aggregates (RCA) Stabilized Base</TD>
+      <TD>The Roadbed Base describes the base pavement type below the roadbed surface. Roadbed Base (i.e. Base Type) is a required asset for reporting to FHWA as part of the HPMS submittal. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Base Type</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED ELEVATION</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED INTERSECTION</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED SURFACE</TD>
+      <TD>RDBD_SRFC</TD>
+      <TD>1 = Continuously Reinforced Concrete<BR>2 = Jointed Reinforced Concrete<BR>3 = Jointed Plain Concrete<BR>4 = Thick Asphaltic Concrete (5.5+ inches)<BR>5 = Medium Thickness Asphaltic Concrete (2.5-5.5 inches)<BR>6 = Thin Asphaltic Concrete (Under 2.5 inches)<BR>7 = Composite (Asphalt Surfaced Concrete)<BR>8 = Widened Composite<BR>9 = Overlaid and widened Asphaltic Concrete Pavement<BR>10 = Surface Treatment Pavement<BR>11 = Brick<BR>12 = Bladed<BR>13 = Gravel<BR>14 = Unknown<BR></TD>
+      <TD>The Roadbed Surface describes the type of pavement on the surface of the roadway. Surface Type (i.e. Roadbed Surface) is a required asset for reporting to FHWA as part of the HPMS submittal. Principal factors in considering the selection of surface types are traffic, soil characteristics, weather, construction considerations, recycling opportunities, and cost comparison. See TxDOT's Pavement Manual for more information. <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Surface Type</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADBED WIDTH</TD>
+      <TD>RB_WID</TD>
+      <TD>Roadbed width in feet or default values<BR><BR>Off-System default: 20'<BR>On-System default: 24'</TD>
+      <TD>Roadbed Width is the measurement, in feet, of the width of the surfaced portion of a physically separate roadbed. This portion consists of the through lanes, turn lanes, parking, and surfaced shoulders.<BR><BR>Roadbed Width = Surface Width + Shoulder Width + Turn Lanes <BR><BR>Priority: Critical<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Width</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADSIDE STRUCTURE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADWAY DESIGN</TD>
+      <TD></TD>
+      <TD>Boulevard<BR>Expressway<BR>Freeway<BR>One-Way<BR>One-Way (couplet)<BR>Two-Way<BR>Unknown</TD>
+      <TD>Roadway Design describes the flow of traffic, functionality, and the control of access for a roadway. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Design Type</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADWAY MAINTENANCE AGENCY</TD>
+      <TD>RDWAY_MAINT_AGCY</TD>
+      <TD>State Highway Agency<BR>County<BR>City (Municipality)<BR>Private Toll<BR>Local Toll Authority<BR>Other Federal Agency<BR>Bureau of Indian Affairs<BR>Bureau of Fish and Wildlife<BR>U.S. Forest Service<BR>National Park Service<BR>Bureau of Reclamation<BR>Corps of Engineers<BR>Navy/Marines<BR>Army<BR>Regional Mobility Authority<BR>Other<BR>Unknown</TD>
+      <TD>Roadway Maintenance Agency is a full coverage, linear asset in GRID that represents the agency assigned to maintain a specific roadway section. Roadway Maintenance Agency is a required asset for reporting to FHWA as part of the HPMS submittal. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Agency</TD>
+      </TR>
+
+      <TR>
+      <TD>ROADWAY STATUS</TD>
+      <TD>RDWAY_STAT<br>RDWAY_STAT_TYPE</TD>
+      <TD>1 = Proposed, no roadway<BR>2 = State highway not built yet<BR>3 = Under construction<BR>4 = Open with some construction<BR>5 = open<BR>6 = Temporarily closed<BR>7 = Unknown</TD>
+      <TD>Roadway Status describes if a route is open and drivable by the public. There are also other statuses which describe the intermediate states between closed to all traffic and completely open to traffic. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Status, Status Date</TD>
+      </TR>
+
+      <TR>
+      <TD>ROUTE DEFINITION</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SCENIC OVERLOOK</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SCHOOL ZONE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>SOIL</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>STRAHNET</TD>
+      <TD>GRIDOP.STRAHNET</TD>
+      <TD>None<BR>STRAHNET Route<BR>STRAHNET Connector<BR>Unknown</TD>
+      <TD>The Strategic Highway Network (STRAHNET) is critical to the Department of Defense's (DoD's) domestic operations. The STRAHNET is a 62,791-mile system of roads deemed necessary for emergency mobilization and peacetime movement of heavy armor, fuel, ammunition, repair parts, food, and other commodities to support U.S. military operations. Even though DoD primarily deploys heavy equipment by rail, highways play a critical role. <BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, STRAHNET Type, Approval Date</TD>
+      </TR>
+
+      <TR>
+      <TD>STREAM CROSSING</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>STREET DEFINITION</TD>
+      <TD></TD>
+      <TD>E Riverside Dr.<BR>Main St</TD>
+      <TD>Street Definition describes the name that is given to a road. It comes in a two-part form. One is an individual name known as a specific and two, an indicator of the type of street, known as the generic. A street name can also include a direction (the cardinal points east, west, north, south, or the quadrants NW, NE, SW, SE).<BR><BR>Priority: Critical<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Street Prefix, Street Name, Street Suffix, Street Type</TD>
+      </TR>
+
+      <TR>
+      <TD>TELEPHONE LINE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>TERRAIN</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>TEST SITE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>Toll</TD>
+      <TD>TL</TD>
+      <TD>TL0161</TD>
+      <TD>Toll roads are roads that require payment upon usage of the roadway facility.<BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Toll Name, Toll Charge</TD>
+      </TR>
+
+      <TR>
+      <TD>TOLL BOOTH</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>TOLL LANE</TD>
+      <TD>TOLL_LANE</TD>
+      <TD>Has Toll lanes but not HOT lanes<BR>Has HOT lanes<BR>None</TD>
+      <TD>A Toll Lane is a tolled facility, such as an express lane, within a non-tolled facility. This asset distinguishes between simple toll lanes and High-Occupancy Toll (HOT) lanes. HOT Lanes provide single-occupant vehicles with access to an HOV lane for a fee, as opposed to HOV lanes, which provide non-tolled access only to vehicles with 2 or more passengers.<BR><BR>Priority: High<BR>Status: Maintained by District<BR>Geometry: Line<BR>Attributes: Roadbed, Toll Lane</TD>
+      </TR>
+
+      <TR>
+      <TD>TOURIST INFORMATION CENTER</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>TRAFFIC MANAGEMENT ISTRUMENT</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Currently not used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>TRAFFIC MONITOR SITE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Currently not used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>TRAFFIC SIGNAL</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>TRANSMISSION LINE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>TRUCK ROUTE</TD>
+      <TD>TRK_RTE<BR>SEC_NTRK<BR>SEC_STE<BR>TEXAS TRUCK SYTEM<BR>NATIONAL TRUCK ROUTE</TD>
+      <TD>Is not a truck route<BR>Is a national truck route<BR>Is a state truck route<BR>Is both a state and national truck route</TD>
+      <TD>Indicates whether a segment is part of the national and/or state truck route system. National Truck Routes are a national network of highways designated by FHWA for use by large trucks. The National Network (NN) includes almost all of the Interstate Highway System and other, specified non-Interstate highways. The network comprises more than 200,000 miles of highways.<BR><BR>The State Trunk System is a network of rural divided highways that complements and includes elements of the Interstate Highway System. The minimal design criteria for this network specify that each highway should be at least a four-lane divided facility. That includes routes which are not yet made of four lanes, but ideally will be. The Trunk System will serve as a principal connector for all Texas cities with over 20,000 population as well as major ports and points of entry. The total mileage of the Trunk System, as stated in TxDOT Minute Order 910209, is limited to 11,500 miles. <BR><BR>Priority: High<BR>Status: Maintained by TPP<BR>Geometry: Line<BR>Attributes: Roadbed, Route Type, Truck System</TD>
+      </TR>
+
+      <TR>
+      <TD>TxDOT FACILITY</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>UTILITY</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>VERTICAL GRADE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>WATERLINE CROSSING</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>WIDENING OBSTACLE</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>WIDENING POTENTIAL</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Not currently used/maintained</TD>
+      </TR>
+
+      <TR>
+      <TD>YEAR OF LAST CONSTRUCTION</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>YEAR OF LAST IMPROVEMENT</TD>
+      <TD></TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Line<BR></TD>
+      </TR>
+
+      <TR>
+      <TD>RIGHT FRONTAGE ROAD</TD>
+      <TD>AG</TD>
+      <TD>IH0010-AG</TD>
+      <TD>Generally parallel to main lanes, controlled-access roadbeds that provide access to adjacent property. The frontage roadbed which carries traffic in the direction of route inventory. Counted towards mileage certification total.</TD>
+      </TR>
+
+      <TR>
+      <TD>ALLEY</TD>
+      <TD>ALY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ANEX</TD>
+      <TD>ANX</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ARCADE</TD>
+      <TD>ARC</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>AVENUE</TD>
+      <TD>AVE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BEACH</TD>
+      <TD>BCH</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BUSINESS FM</TD>
+      <TD>BF</TD>
+      <TD>BF1431</TD>
+      <TD>A roadway beginning and ending on a through Farm to Market Road, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>BURG<br>BURGS</TD>
+      <TD>BG<br>BGS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RIGHT SUPPLEMENTAL FRONTAGE ROAD</TD>
+      <TD>BG</TD>
+      <TD>IH0010-BG</TD>
+      <TD>Supplemental lanes are used for physically separated lanes such as toll lanes and plaza, or rest areas.</TD>
+      </TR>
+
+      <TR>
+      <TD>BUSINESS IH</TD>
+      <TD>BI</TD>
+      <TD>BI0010</TD>
+      <TD>A roadway beginning and ending on a through interstate highway, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>BLUFF<br>BLUFFS</TD>
+      <TD>BLF<br>BLFS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BOULEVARD</TD>
+      <TD>BLVD</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BEND</TD>
+      <TD>BND</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BRANCH</TD>
+      <TD>BR</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BROOK<br>BROOKS</TD>
+      <TD>BRK<br>BRKS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BUSINESS STATE</TD>
+      <TD>BS</TD>
+      <TD>BS0101B</TD>
+      <TD>A roadway beginning and ending on a through state highway, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>BOTTOM</TD>
+      <TD>BTM</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BUSINESS US</TD>
+      <TD>BU</TD>
+      <TD>BU0175E</TD>
+      <TD>A roadway beginning and ending on a through U. S. highway, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>BYPAS</TD>
+      <TD>BYP</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>BAYOU</TD>
+      <TD>BYU</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CIRCLE<br>CIRCLES</TD>
+      <TD>CIR<br>CIRS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CENTERLINE</TD>
+      <TD>CL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CLUB</TD>
+      <TD>CLB</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CLIFF<br>CLIFFS</TD>
+      <TD>CLF<br>CLFS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>COMMON<br>COMMONS</TD>
+      <TD>CMN<br>CMNS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CONNECTOR</TD>
+      <TD>CN</TD>
+      <TD>IH0010-CN</TD>
+      <TD>Connects main lane to main lane of different routes, either on or off system. Connects frontage to frontage. No access to adjacent property.</TD>
+      </TR>
+
+      <TR>
+      <TD>CORNER<br>CORNERS</TD>
+      <TD>COR<br>CORS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CAMP</TD>
+      <TD>CP</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CAPE</TD>
+      <TD>CPE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>COUNTY ROAD</TD>
+      <TD>CR</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CRESCENT</TD>
+      <TD>CRES</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CREEK</TD>
+      <TD>CRK</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>COURSE</TD>
+      <TD>CRSE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CREST</TD>
+      <TD>CRST</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LOCAL CITY STREET</TD>
+      <TD>CS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>COURT<br>COURTS</TD>
+      <TD>CT<br>CTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CENTER<br>CENTERS</TD>
+      <TD>CTR<br>CTRS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CURVE</TD>
+      <TD>CURV</TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Point</TD>
+      </TR>
+
+      <TR>
+      <TD>COVE<br>COVES</TD>
+      <TD>CV<br>CVS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>CANYON</TD>
+      <TD>CYN</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>DALE</TD>
+      <TD>DL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>DAM</TD>
+      <TD>DM</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>DRIVE<br>DRIVES</TD>
+      <TD>DR<br>DRS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>DIVIDE</TD>
+      <TD>DV</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ESTATE<br>ESTATES</TD>
+      <TD>EST<br>ESTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>EXPRESSWAY</TD>
+      <TD>EXPY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>EXTENSION<br>EXTENSIONS</TD>
+      <TD>EXT<br>EXTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FALL<br>FALLS</TD>
+      <TD>FL<br>FLS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FUNCTIONALLY CLASSIFIED CITY STREET</TD>
+      <TD>FC</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FEDERAL ROAD</TD>
+      <TD>FD</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FIELD<br>FIELDS</TD>
+      <TD>FLD<br>FLDS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FLAT<br>FLATS</TD>
+      <TD>FLT<br>FLTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FARM TO MARKET</TD>
+      <TD>FM</TD>
+      <TD>FM0001</TD>
+      <TD>A roadway generally in rural areas, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>FORD<br>FORDS</TD>
+      <TD>FRD<br>FRDS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FORGE<br>FORGES</TD>
+      <TD>FRG<br>FRGS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FORK<br>FORKS</TD>
+      <TD>FRK<br>FRKS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FOREST</TD>
+      <TD>FRST</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FERRY</TD>
+      <TD>FRY</TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by District<BR>Geometry: Point</TD>
+      </TR>
+
+      <TR>
+      <TD>FM SPUR</TD>
+      <TD>FS</TD>
+      <TD>FS0001</TD>
+      <TD>Begins on a Farm to Market Road and usually ends without connecting to an on-system road, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>FORT</TD>
+      <TD>FT</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>FREEWAY</TD>
+      <TD>FWY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>GARDEN<br>GARDENS</TD>
+      <TD>GDN<br>GDNS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>GLEN<br>GLENS</TD>
+      <TD>GLN<br>GLNS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>GREEN<br>GREENS</TD>
+      <TD>GRN<br>GRNS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>GROVE<br>GROVES</TD>
+      <TD>GRV<br>GRVS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>GRADE SEPERATOR</TD>
+      <TD>GS</TD>
+      <TD><BR></TD>
+      <TD>Connects main lane to main lane of different routes at different grades, either on or off system.</TD>
+      </TR>
+
+      <TR>
+      <TD>GATEWAY</TD>
+      <TD>GTWY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>HARBOR<br>HARBORS</TD>
+      <TD>HBR<br>HRBS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>HILL<br>HILLS</TD>
+      <TD>HL<br>HLS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>HOLLOW</TD>
+      <TD>HOLW</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>HEIGHTS</TD>
+      <TD>HTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>HAVEN</TD>
+      <TD>HVN</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>HIGHWAY</TD>
+      <TD>HWY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>INTERSTATE</TD>
+      <TD>IH</TD>
+      <TD>IH0010</TD>
+      <TD>A highway so designated by The American Association of State Highway and Transportation Officials (AASHTO)</TD>
+      </TR>
+
+      <TR>
+      <TD>INLET</TD>
+      <TD>INLT</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ISLAND<br>ISLANDS</TD>
+      <TD>IS<br>ISS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ISLE</TD>
+      <TD>ISLE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>JUNCTION<br>JUNCTIONS</TD>
+      <TD>JCT<br>JCTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>SINGLE ROADBED (two way traffic)</TD>
+      <TD>KG</TD>
+      <TD>IH0010-KG</TD>
+      <TD>The KG represents a single roadbed, or the 'artificial' centerline of divided highways. Counted towards mileage certification total.</TD>
+      </TR>
+
+      <TR>
+      <TD>KNOLL<br>KNOLLS</TD>
+      <TD>KNL<br>KNLS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>KEY<br>KEYS</TD>
+      <TD>KY<br>KYS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LAND</TD>
+      <TD>LAND</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LOCK<br>LOCKS</TD>
+      <TD>LCK<br>LCKS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LODGE</TD>
+      <TD>LDG</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LOAF</TD>
+      <TD>LF</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LEFT ROADBED MAIN LANE</TD>
+      <TD>LG</TD>
+      <TD>IH0010-LG</TD>
+      <TD>The LG carries traffic in the opposite direction of route inventory, regardless of its orientation to the KG (i.e. the LG can be on the right side of the KG).</TD>
+      </TR>
+
+      <TR>
+      <TD>LIGHT<br>LIGHTS</TD>
+      <TD>LGT<br>LGTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LAKE<br>LAKES</TD>
+      <TD>LK<br>LKS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LANE</TD>
+      <TD>LN</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LANDING</TD>
+      <TD>LNDG</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LOOP</TD>
+      <TD>LOOP</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MALL</TD>
+      <TD>MALL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MEADOW<br>MEADOWS</TD>
+      <TD>MDW<br>MDWS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MEWS</TD>
+      <TD>MEWS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LEFT SUPPLEMENTAL MAIN LANE</TD>
+      <TD>MG</TD>
+      <TD>IH0010-MG</TD>
+      <TD>Supplemental lanes are used for physically separated lanes such as toll lanes and plaza, or rest areas.</TD>
+      </TR>
+
+      <TR>
+      <TD>MILL<br>MILLS</TD>
+      <TD>ML<br>MLS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MANOR<br>MANORS</TD>
+      <TD>MNR<br>MNRS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MISSION</TD>
+      <TD>MSN</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MOUNT</TD>
+      <TD>MT</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MOUNTAIN<br>MOUNTAINS</TD>
+      <TD>MTN<br>MTNS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>MOTORWAY</TD>
+      <TD>MTWY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>NECK</TD>
+      <TD>NCK</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>OVERPASS</TD>
+      <TD>OPAS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ORCHARD</TD>
+      <TD>ORCH</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>OTHER</TD>
+      <TD>OT</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>OVAL</TD>
+      <TD>OVAL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PRINCIPAL ARTERIAL</TD>
+      <TD>PA</TD>
+      <TD>PA1502</TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PARKS</TD>
+      <TD>PARK</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PASS</TD>
+      <TD>PASS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PATH</TD>
+      <TD>PATH</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LEFT SUPPLEMENTAL SUPPLEMENTAL MAIN LANE</TD>
+      <TD>PG</TD>
+      <TD>US0060-PG</TD>
+      <TD>Supplemental main lanes are used for physically separated lanes such as toll lanes and plaza, or rest areas.</TD>
+      </TR>
+
+      <TR>
+      <TD>PIKE</TD>
+      <TD>PIKE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PARKWAYS</TD>
+      <TD>PKWY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PLACE</TD>
+      <TD>PL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PLAIN<br>PLAINS</TD>
+      <TD>PLN<br>PLNS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PLAZA</TD>
+      <TD>PLZ</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PINE<br>PINES</TD>
+      <TD>PNE<br>PNES</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PARK ROAD</TD>
+      <TD>PR</TD>
+      <TD>PR0001</TD>
+      <TD>Roadway to a recognized state or national park, so designated by the Texas Transportation Commission. Roadways within state parks are maintained by TxDOT by law and no designation is necessary.</TD>
+      </TR>
+
+      <TR>
+      <TD>PRAIRIE</TD>
+      <TD>PR</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PORT<br>PORTS</TD>
+      <TD>PRT<br>PRTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>PASSAGE</TD>
+      <TD>PSGE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>POINT<br>POINTS</TD>
+      <TD>PT<br>PTS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RADIAL</TD>
+      <TD>RADL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ROAD<br>ROADS</TD>
+      <TD>RD<br>RDS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RIDGE<br>RIDGES</TD>
+      <TD>RDG<br>RDGS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RECREATIONAL ROAD</TD>
+      <TD>RE</TD>
+      <TD>RE0010</TD>
+      <TD>Roadway to a recognized recreational area, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>RIGHT ROADBED MAIN LANE</TD>
+      <TD>RG</TD>
+      <TD>IH0010-RG</TD>
+      <TD>The RG carries traffic in the direction of route inventory, regardless of its orientation to the KG (i.e. the RG can be on the left side of the KG).</TD>
+      </TR>
+
+      <TR>
+      <TD>RIVER</TD>
+      <TD>RIV</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RANCH TO MARKET</TD>
+      <TD>RM</TD>
+      <TD>RM1222</TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RANCH</TD>
+      <TD>RNCH</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>ROW</TD>
+      <TD>ROW</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RAMP</TD>
+      <TD>RP</TD>
+      <TD>PA1502-RP</TD>
+      <TD>Connects two road features of the same route. No access to adjacent property. A frontage road becomes a ramp at the point it is only serving to move traffic from the frontage to the main lane or vice versa, thus it is not providing access to intersections</TD>
+      </TR>
+
+      <TR>
+      <TD>RECREATIONAL ROAD SPUR</TD>
+      <TD>RP</TD>
+      <TD><BR></TD>
+      <TD>Roadway which usually begins on an on-system roadway and ends on an off-system roadway, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>RAPID<br>RAPIDS</TD>
+      <TD>RPD<br>RPDS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RANCH ROAD</TD>
+      <TD>RR</TD>
+      <TD>RR0001</TD>
+      <TD>Only one, Ranch Road 1; considered part of the Farm to Market Road system.</TD>
+      </TR>
+
+      <TR>
+      <TD>RM SPUR</TD>
+      <TD>RS</TD>
+      <TD>RS1919</TD>
+      <TD>A roadway generally in rural areas, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>REST</TD>
+      <TD>RST</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RR SPUR</TD>
+      <TD>RU</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RUE</TD>
+      <TD>RUE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RUN</TD>
+      <TD>RUN</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>STATE ALTERNATIVE</TD>
+      <TD>SA</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RIGHT SUPPLEMENTAL MAIN LANE</TD>
+      <TD>SG</TD>
+      <TD>US0010-SG</TD>
+      <TD>Supplemental main lanes are used for physically separated lanes such as toll lanes and plaza, or rest areas.</TD>
+      </TR>
+
+      <TR>
+      <TD>STATE HIGHWAY</TD>
+      <TD>SH</TD>
+      <TD>SH0044</TD>
+      <TD>A roadway so designated by the Texas Transportation Commission (includes NASA Road 1 and Old San Antonio Road "OSR").</TD>
+      </TR>
+
+      <TR>
+      <TD>SHOAL<br>SHOALS</TD>
+      <TD>SHL<br>SHL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>SHORE<br>SHORES</TD>
+      <TD>SHR<br>SHRS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>SKYWAY</TD>
+      <TD>SKWY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>STATE LOOP</TD>
+      <TD>SL</TD>
+      <TD>SL0250</TD>
+      <TD>Roadway usually created as a by-pass, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>SUMMIT</TD>
+      <TD>SMT</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>SPRING<br>SPRINGS</TD>
+      <TD>SPG<br>SPGS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>SPUR</TD>
+      <TD>SPUR</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>SQUARE<br>SQUARES</TD>
+      <TD>SQ<br>SQS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>STATE SPUR</TD>
+      <TD>SS</TD>
+      <TD>SS0366</TD>
+      <TD>Roadway which usually begins on a state highway and ends on an off-system roadway, so designated by the Texas Transportation Commission.</TD>
+      </TR>
+
+      <TR>
+      <TD>STREET<br>STREETS</TD>
+      <TD>ST<br>STS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>STATION</TD>
+      <TD>STA</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>STRAVENUE</TD>
+      <TD>STRA</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>STREAM</TD>
+      <TD>STRM</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>TURNAROUND</TD>
+      <TD>TA</TD>
+      <TD>IH0069C-TA</TD>
+      <TD>Provides ability to change direction when traveling on a divided route. No access to adjacent property; connects two roadbeds on the same route.</TD>
+      </TR>
+
+      <TR>
+      <TD>TERRACE</TD>
+      <TD>TER</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>RIGHT SUPPLEMENTAL SUPPLEMENTAL MAIN LANE</TD>
+      <TD>TG</TD>
+      <TD>TL0008-TG</TD>
+      <TD>Supplemental main lanes are used for physically separated lanes such as toll lanes and plaza, or rest areas.</TD>
+      </TR>
+
+      <TR>
+      <TD>TURNPIKE</TD>
+      <TD>TPKE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>TRACK</TD>
+      <TD>TRAK</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>TRACE</TD>
+      <TD>TRCE</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>TRAFFICWAY</TD>
+      <TD>TRFY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>TRAIL</TD>
+      <TD>TRL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>TRAILER</TD>
+      <TD>TRLR</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>THROUGHWAY</TD>
+      <TD>TRWY</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>TUNNEL</TD>
+      <TD>TUNL</TD>
+      <TD><BR></TD>
+      <TD>Status: Maintained by TPP<BR>Geometry: Line</TD>
+      </TR>
+
+      <TR>
+      <TD>US ALTERNATIVE</TD>
+      <TD>UA</TD>
+      <TD>UA0090</TD>
+      <TD>An alternate highway route so designated by AASHTO.</TD>
+      </TR>
+
+      <TR>
+      <TD>UNION<br>UNIONS</TD>
+      <TD>UN<br>UNS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>US SPUR</TD>
+      <TD>UP</TD>
+      <TD>UP0281</TD>
+      <TD>A highway so designated by AASHTO; usually begins on a U. S. Highway and ends on an off-system roadway.</TD>
+      </TR>
+
+      <TR>
+      <TD>UNDERPASS</TD>
+      <TD>UPAS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>US HIGHWAY</TD>
+      <TD>US</TD>
+      <TD>US0010</TD>
+      <TD>A highway so designated by AASHTO.</TD>
+      </TR>
+
+      <TR>
+      <TD>VIADUCT</TD>
+      <TD>VIA</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>VISTA</TD>
+      <TD>VIS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>VILLE</TD>
+      <TD>VL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>VILLAGE<br>VILLAGES</TD>
+      <TD>VLG<br>VLGS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>VALLEY<br>VALLEYS</TD>
+      <TD>VLY<br>VLYS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>VIEW<br>VIEWS</TD>
+      <TD>VW<br>VMS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>WALKS</TD>
+      <TD>WALK</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>WALL</TD>
+      <TD>WALL</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>WAY<br>WAYS</TD>
+      <TD>WAY<br>WAYS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>WELL<br>WELLS</TD>
+      <TD>WL<br>WLS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LEFT FRONTAGE ROAD</TD>
+      <TD>XG</TD>
+      <TD>US0010-XG</TD>
+      <TD>Generally parallel to main lanes, controlled-access roadbeds that provide access to adjacent property. The frontage roadbed which carries traffic in the opposite direction of route inventory. Counted towards mileage certification total.</TD>
+      </TR>
+
+      <TR>
+      <TD>CROSSING</TD>
+      <TD>XING</TD>
+      <TD><BR></TD>
+      <TD><BR></TD>
+      </TR>
+
+      <TR>
+      <TD>CROSSROAD<BR>CROSSROADS</TD>
+      <TD>XRD<BR>XRDS</TD>
+      <TD><BR></TD>
+      <TD></TD>
+      </TR>
+
+      <TR>
+      <TD>LEFT SUPPLEMENTAL FRONTAGE ROAD</TD>
+      <TD>YG</TD>
+      <TD>US0010-YG</TD>
+      <TD>Supplemental lanes are used for physically separated lanes such as toll lanes and plaza, or rest areas.</TD>
+      </TR>
+
+      </TABLE>
+      </BODY>
+      </HTML>

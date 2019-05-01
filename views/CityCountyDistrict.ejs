@@ -1,0 +1,27 @@
+
+<% include partials/header.ejs %>
+<% include partials/nav.ejs %>
+
+<!--Need to update search boxes to bootstrap and addd buttom -->
+<!--Combine searches into one with ratial buttons to filter city,     county or district search-->
+<!--Create and connect to Array for table  -->
+<!--Convert array to DB table  -->
+<!--Create exort to PDF function  -->
+<!--Adjust padding/margins  -->
+<!--Create footer  -->
+
+<h1 style= "text-align: center">City County District Search</h1>
+
+<h3>City Search</h3>
+  <p> Enter city name "Austin" or five digit city number "02100" to find exact matches, pad smaller numbers with leading zeros "0".  The table will filter as you type showing all possible results.</p>
+  <p><input type="text" id="myCityInput" onkeyup="myCityFunction()" placeholder="City Search...." title="Type in City name or number"></p>
+
+<h3>County Search</h3>
+  <p> Enter county name "Travis" or three digit county number "227" to find exact matches, pad smaller numbers with leading zeros "0".  The table will filter as you type showing all possible results.</p>
+  <p><input type="text" id="myCountyInput" onkeyup="myCountyFunction()" placeholder="County Search...." title="Type in County name or number"></p>
+
+<h3>District Search</h3>
+  <p> Enter district name "Austin", two digit district number "14" or three letter abbreviation "AUS" to find exact matches, pad smaller numbers with leading zeros "0".  The table will filter as you type showing all possible results.</p>
+  <p><input type="text" id="myDistrictInput" onkeyup="myDistrictFunction()" placeholder="District Search...." title="Type in District name, number or abbreviation"></p>
+
+<% include partials/footer.ejs %>

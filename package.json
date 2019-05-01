@@ -1,0 +1,15 @@
+{
+  "name": "april2019_ejs",
+  "version": "1.0.0",
+  "description": "GIS Data Dictionary build with ejs and REST API for search",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Alt TPP-DM",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
